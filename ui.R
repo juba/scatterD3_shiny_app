@@ -45,6 +45,7 @@ fluidPage(
                             "Number of forward gears" = "gear",
                             "Number of carburetors" = "carb"),
                 selected = "cyl"),
+    checkboxInput("scatterD3_ellipses", "Confidence ellipses", value = FALSE),
     selectInput("scatterD3_symbol", "Symbol mapping variable :",
                 choices = c("None" = "None",
                             "Number of cylinders" = "cyl",

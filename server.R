@@ -18,6 +18,7 @@ function(input, output) {
               ylab = input$scatterD3_y,
               col_var = col_var,
               col_lab = input$scatterD3_col,
+              ellipses = input$scatterD3_ellipses,
               symbol_var = symbol_var,
               symbol_lab = input$scatterD3_symbol,
               size_var = size_var,
