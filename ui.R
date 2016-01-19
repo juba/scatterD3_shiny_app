@@ -20,7 +20,7 @@ fluidPage(
   sidebarLayout(
     sidebarPanel(
     sliderInput("scatterD3_nb", "Number of observations",
-                 min = 3, max = nrow(mtcars), value = nrow(mtcars)),
+                 min = 3, max = nrow(mtcars), step = 1, value = nrow(mtcars)),
     selectInput("scatterD3_x", "x variable :",
                 choices = c("Miles/(US) gallon" = "mpg",
                             "Displacement (cu.in.)" = "disp",
