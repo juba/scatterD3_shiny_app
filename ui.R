@@ -65,7 +65,7 @@ fluidPage(
                 selected = "hp"),
     sliderInput("scatterD3_labsize", "Labels size :",
                  min = 5, max = 25, value = 11),
-    sliderInput("scatterD3_opacity", "Points opacity :", min = 0, max = 1, value = 1),
+    sliderInput("scatterD3_opacity", "Points opacity :", min = 0, max = 1, value = 1, step = 0.05),
     checkboxInput("scatterD3_transitions", "Use transitions", value = TRUE),
     tags$p(actionButton("scatterD3-reset-zoom", HTML("<span class='glyphicon glyphicon-search' aria-hidden='true'></span> Reset Zoom")),
            tags$a(id = "scatterD3-svg-export", href = "#",
