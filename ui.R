@@ -16,6 +16,7 @@ fluidPage(
 <li>Hover over the color or symbol legends items</li>
 <li>Change data settings to see transitions</li>
 <li>Resize the window to test for responsiveness</li>
+<li>Try the lasso plugin with the toggle button or by using Shift+click</li>
 </ul>")))),
   sidebarLayout(
     sidebarPanel(
@@ -68,6 +69,7 @@ fluidPage(
     sliderInput("scatterD3_opacity", "Points opacity :", min = 0, max = 1, value = 1, step = 0.05),
     checkboxInput("scatterD3_transitions", "Use transitions", value = TRUE),
     tags$p(actionButton("scatterD3-reset-zoom", HTML("<span class='glyphicon glyphicon-search' aria-hidden='true'></span> Reset Zoom")),
+           actionButton("scatterD3-lasso-toggle", HTML("<span class='glyphicon glyphicon-screenshot' aria-hidden='true'></span> Toggle Lasso"), "data-toggle" = "button"),
            tags$a(id = "scatterD3-svg-export", href = "#",
                   class = "btn btn-default", HTML("<span class='glyphicon glyphicon-save' aria-hidden='true'></span> Download SVG"))),
     tags$ul(tags$li(tags$a(href = "https://github.com/juba/scatterD3", "scatterD3 on GitHub")),

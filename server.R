@@ -26,6 +26,7 @@ function(input, output) {
               key_var = rownames(data()),
               point_opacity = input$scatterD3_opacity,
               labels_size = input$scatterD3_labsize,
-              transitions = input$scatterD3_transitions)
+              transitions = input$scatterD3_transitions,
+              lasso = TRUE)
   })
 }
