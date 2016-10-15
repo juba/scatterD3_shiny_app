@@ -17,6 +17,7 @@ fluidPage(
 <li>Change data settings to see transitions</li>
 <li>Resize the window to test for responsiveness</li>
 <li>Try the lasso plugin with the toggle button or by using Shift+click</li>
+<li>Click on a dot to open its associated URL (doesn't work in RStudio's internal browser)</li>
 </ul>")))),
   sidebarLayout(
     sidebarPanel(
