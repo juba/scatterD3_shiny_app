@@ -23,6 +23,7 @@ function(input, output) {
               symbol_lab = input$scatterD3_symbol,
               size_var = size_var,
               size_lab = input$scatterD3_size,
+              url_var = paste0("https://www.duckduckgo.com/?q=", rownames(data())),
               key_var = rownames(data()),
               point_opacity = input$scatterD3_opacity,
               labels_size = input$scatterD3_labsize,
