@@ -50,6 +50,7 @@ function(input, output) {
               point_opacity = input$scatterD3_opacity,
               labels_size = input$scatterD3_labsize,
               transitions = input$scatterD3_transitions,
+              left_margin = 90,
               lines = lines(),
               lasso = TRUE,
               lasso_callback = "function(sel) {alert(sel.data().map(function(d) {return d.lab}).join('\\n'));}")
