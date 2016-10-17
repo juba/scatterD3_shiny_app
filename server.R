@@ -1,6 +1,10 @@
 library(shiny)
 library(scatterD3)
 
+d <- mtcars
+d$names <- rownames(mtcars)
+d$cyl_cat <- paste(d$cyl, "cylinders")
+
 default_lines <- data.frame(slope = c(0, Inf), 
                             intercept = c(0, 0),
                             stroke = "#000",
@@ -15,7 +19,7 @@ threshold_line <- data.frame(slope = 0,
 function(input, output) {
   
   data <- reactive({
-    mtcars[1:input$scatterD3_nb,]
+    d[1:input$scatterD3_nb,]
   })
   
   lines <- reactive({
@@ -31,7 +35,7 @@ function(input, output) {
     size_var <- if (input$scatterD3_size == "None") NULL else data()[,input$scatterD3_size]
     scatterD3(x = data()[,input$scatterD3_x],
               y = data()[,input$scatterD3_y],
-              lab = rownames(data()),
+              lab = data()[,"names"],
               xlab = input$scatterD3_x,
               ylab = input$scatterD3_y,
               col_var = col_var,
