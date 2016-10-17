@@ -1,10 +1,28 @@
 library(shiny)
 library(scatterD3)
 
+default_lines <- data.frame(slope = c(0, Inf), 
+                            intercept = c(0, 0),
+                            stroke = "#000",
+                            stroke_width = 1,
+                            stroke_dasharray = c(5, 5))
+threshold_line <- data.frame(slope = 0, 
+                             intercept = 30, 
+                             stroke = "#F67E7D",
+                             stroke_width = 2,
+                             stroke_dasharray = "")
+
 function(input, output) {
   
   data <- reactive({
     mtcars[1:input$scatterD3_nb,]
+  })
+  
+  lines <- reactive({
+    if (input$scatterD3_threshold_line) {
+      return(rbind(default_lines, threshold_line))
+    }
+    default_lines
   })
   
   output$scatterPlot <- renderScatterD3({
@@ -28,6 +46,7 @@ function(input, output) {
               point_opacity = input$scatterD3_opacity,
               labels_size = input$scatterD3_labsize,
               transitions = input$scatterD3_transitions,
+              lines = lines(),
               lasso = TRUE,
               lasso_callback = "function(sel) {alert(sel.data().map(function(d) {return d.lab}).join('\\n'));}")
   })

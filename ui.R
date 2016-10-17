@@ -69,6 +69,7 @@ fluidPage(
                             "Weight (lb/1000)" = "wt",
                             "1/4 mile time" = "qsec"),
                 selected = "hp"),
+    checkboxInput("scatterD3_threshold_line", "Arbitrary threshold line", value = FALSE),    
     sliderInput("scatterD3_labsize", "Labels size :",
                  min = 5, max = 25, value = 11),
     sliderInput("scatterD3_opacity", "Points opacity :", min = 0, max = 1, value = 1, step = 0.05),
