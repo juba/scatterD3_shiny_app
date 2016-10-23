@@ -52,7 +52,7 @@ fluidPage(
                             "Rear axle ratio" = "drat",
                             "Weight (lb/1000)" = "wt",
                             "1/4 mile time" = "qsec"),
-                selected = "cyl"),
+                selected = "cyl_cat"),
     checkboxInput("scatterD3_ellipses", "Confidence ellipses", value = FALSE),
     selectInput("scatterD3_symbol", "Symbol mapping variable :",
                 choices = c("None" = "None",
