@@ -38,6 +38,8 @@ function(input, output) {
               lab = data()[,"names"],
               xlab = input$scatterD3_x,
               ylab = input$scatterD3_y,
+              x_log = input$scatterD3_x_log,
+              y_log = input$scatterD3_y_log,
               col_var = col_var,
               col_lab = input$scatterD3_col,
               ellipses = input$scatterD3_ellipses,
@@ -53,6 +55,9 @@ function(input, output) {
               left_margin = 90,
               lines = lines(),
               lasso = TRUE,
+              caption = list(title = "Sample scatterD3 shiny app",
+                             subtitle = "A sample application to show animated transitions",
+                             text = "Yep, you can even use <strong>markup</strong> in caption text. <em>Incredible</em>, isn't it ?"),
               lasso_callback = "function(sel) {alert(sel.data().map(function(d) {return d.lab}).join('\\n'));}")
   })
 }
