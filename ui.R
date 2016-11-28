@@ -85,6 +85,7 @@ fluidPage(
     tags$ul(tags$li(tags$a(href = "https://github.com/juba/scatterD3", "scatterD3 on GitHub")),
             tags$li(tags$a(href = "https://github.com/juba/scatterD3_shiny_app", "This app on GitHub")))
   ),
-  mainPanel(scatterD3Output("scatterPlot", height = "700px"))
+  mainPanel(scatterD3Output("scatterPlot", height = "700px"),
+            textOutput("selected_point"))
 ))
 

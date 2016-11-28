@@ -47,7 +47,12 @@ function(input, output) {
               symbol_lab = input$scatterD3_symbol,
               size_var = size_var,
               size_lab = input$scatterD3_size,
-              url_var = paste0("https://www.duckduckgo.com/?q=", rownames(data())),
+              #url_var = paste0("https://www.duckduckgo.com/?q=", rownames(data())),
+              click_callback = "function(id, index) {
+  if(id && typeof(Shiny) != 'undefined') {
+      Shiny.onInputChange('selected_point', index);
+  }
+}",
               key_var = rownames(data()),
               point_opacity = input$scatterD3_opacity,
               labels_size = input$scatterD3_labsize,
@@ -60,4 +65,6 @@ function(input, output) {
                              text = "Yep, you can even use <strong>markup</strong> in caption text. <em>Incredible</em>, isn't it ?"),
               lasso_callback = "function(sel) {alert(sel.data().map(function(d) {return d.lab}).join('\\n'));}")
   })
+  
+  output$selected_point <- renderText(paste0("Clicked point : ", data()[input$selected_point,"names"]))
 }
