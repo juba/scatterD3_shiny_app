@@ -73,6 +73,7 @@ fluidPage(
                             "Weight (lb/1000)" = "wt",
                             "1/4 mile time" = "qsec"),
                 selected = "hp"),
+      selectInput("scatterD3_zoomon", "Zoom on :", choices = c("None", rownames(mtcars))),
     checkboxInput("scatterD3_threshold_line", "Arbitrary threshold line", value = FALSE),    
     sliderInput("scatterD3_labsize", "Labels size :",
                  min = 5, max = 25, value = 11),

@@ -33,6 +33,12 @@ function(input, output) {
     col_var <- if (input$scatterD3_col == "None") NULL else data()[,input$scatterD3_col]
     symbol_var <- if (input$scatterD3_symbol == "None") NULL else data()[,input$scatterD3_symbol]
     size_var <- if (input$scatterD3_size == "None") NULL else data()[,input$scatterD3_size]
+    zoom_on <- if (input$scatterD3_zoomon == "None") {
+      NULL 
+    } else {
+      c(data()[input$scatterD3_zoomon, input$scatterD3_x],
+        data()[input$scatterD3_zoomon, input$scatterD3_y])
+    }
     scatterD3(x = data()[,input$scatterD3_x],
               y = data()[,input$scatterD3_y],
               lab = data()[,"names"],
@@ -49,6 +55,8 @@ function(input, output) {
               size_lab = input$scatterD3_size,
               url_var = paste0("https://www.duckduckgo.com/?q=", rownames(data())),
               key_var = rownames(data()),
+              zoom_on = zoom_on,
+              zoom_on_level = 8,
               point_opacity = input$scatterD3_opacity,
               labels_size = input$scatterD3_labsize,
               transitions = input$scatterD3_transitions,
