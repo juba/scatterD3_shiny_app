@@ -84,8 +84,9 @@ fluidPage(
            actionButton("scatterD3-lasso-toggle", HTML("<span class='glyphicon glyphicon-screenshot' aria-hidden='true'></span> Toggle Lasso"), "data-toggle" = "button"),
            tags$a(id = "scatterD3-svg-export", href = "#",
                   class = "btn btn-default", HTML("<span class='glyphicon glyphicon-save' aria-hidden='true'></span> Download SVG"))),
-    tags$ul(tags$li(tags$a(href = "https://github.com/juba/scatterD3", "scatterD3 on GitHub")),
-            tags$li(tags$a(href = "https://github.com/juba/scatterD3_shiny_app", "This app on GitHub")))
+    tags$ul(
+      tags$li(tags$a(href = "https://juba.github.io/scatterD3", "scatterD3 project website")),
+      tags$li(tags$a(href = "https://github.com/juba/scatterD3_shiny_app", "This app on GitHub")))
   ),
   mainPanel(scatterD3Output("scatterPlot", height = "700px"))
 ))
